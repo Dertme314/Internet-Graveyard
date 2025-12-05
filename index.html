@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INTERNET GRAVEYARD</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts for Retro Vibe -->
+    <link href="https://fonts.googleapis.com/css2?family=VT323&family=Creepster&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- CRT Overlay Effect -->
+    <div class="scanlines"></div>
+    <div class="vignette"></div>
+
+    <!-- Custom Cursor -->
+    <div id="cursor" class="ghost-cursor"></div>
+
+    <!-- Audio Controls -->
+    <div class="ui-controls">
+        <button id="mute-btn">🔇 SOUND OFF</button>
+    </div>
+
+    <!-- SECTION 1: LANDING / ENTRANCE -->
+    <section id="landing-page" class="active-screen">
+        <div class="landing-content">
+            <h1 class="glitch" data-text="INTERNET GRAVEYARD">INTERNET GRAVEYARD</h1>
+            <p class="subtitle">Where dead pixels go to rot.</p>
+            
+            <div class="entry-gate">
+                <button id="enter-btn" class="cyber-btn">ENTER THE ARCHIVE</button>
+            </div>
+
+            <div class="scrolling-ticker">
+                <span>RIP VINE 2013-2016 /// MYSPACE TOM IS WATCHING /// FLASH PLAYER NOT FOUND /// NETSCAPE NAVIGATOR HAS STOPPED RESPONDING</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: THE MUSEUM -->
+    <section id="museum-page" class="hidden-screen">
+        <header class="museum-header">
+            <h2 class="neon-text">HALL OF THE DEFUNCT</h2>
+            <nav class="wing-nav">
+                <button class="filter-btn active" data-category="all">ALL GRAVES</button>
+                <button class="filter-btn" data-category="site">DEAD SITES</button>
+                <button class="filter-btn" data-category="meme">OLD MEMES</button>
+                <button class="filter-btn" data-category="app">ABANDONED APPS</button>
+                <button class="filter-btn special" id="random-btn">🎲 RANDOM HAUNT</button>
+            </nav>
+        </header>
+
+        <div class="graveyard-grid" id="graveyard-grid">
+            <!-- Items injected via JS -->
+        </div>
+
+        <!-- Community Submission Trigger -->
+        <div class="submission-trigger">
+            <button id="open-submit-modal" class="cyber-btn secondary">Bury a Memory (+)</button>
+        </div>
+    </section>
+
+    <!-- SECTION 3: DETAIL POPUP / MODAL -->
+    <div id="artifact-modal" class="modal">
+        <div class="modal-content crt-frame">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body">
+                <div class="artifact-visual">
+                    <img id="modal-img" src="" alt="Artifact">
+                    <div class="glitch-overlay"></div>
+                </div>
+                <div class="artifact-info">
+                    <h2 id="modal-title">TITLE</h2>
+                    <p class="death-date">Died: <span id="modal-date"></span></p>
+                    <p id="modal-desc">Description goes here...</p>
+                    
+                    <div class="action-bar">
+                        <button id="resurrect-btn" class="cyber-btn">⚡ ATTEMPT RESURRECTION</button>
+                        <div id="resurrect-log" class="console-log"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION 4: SUBMISSION FORM -->
+    <div id="submit-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal-submit">&times;</span>
+            <h2>SUBMIT A MEMORY</h2>
+            <form id="submission-form">
+                <input type="text" id="sub-title" placeholder="Name of Dead Thing" required>
+                <select id="sub-cat">
+                    <option value="site">Website</option>
+                    <option value="meme">Meme</option>
+                    <option value="app">App/Game</option>
+                </select>
+                <input type="date" id="sub-date" required>
+                <textarea id="sub-desc" placeholder="Why is it haunted?" required></textarea>
+                <button type="submit" class="cyber-btn">BURY IT</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
